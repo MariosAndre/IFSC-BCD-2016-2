@@ -1,4 +1,4 @@
-aluno(*cpf, nome)
+aluno(*cpf, nome, idade, telefone, e-mail)
 
 curso(*código, nome)
 
