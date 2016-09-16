@@ -45,6 +45,10 @@ CREATE TABLE matricula (
 )
 
 
+netcat -l 5000 > mysql.txt
+aluno@sj-labinf-36794:~$ cat mysql.txt
+
+cat .mysql_history | netcat 172.18.97.97 5000
 
 show databases;
 CREATE DATABASE bcd;
