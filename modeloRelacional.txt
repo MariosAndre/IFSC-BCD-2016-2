@@ -32,6 +32,10 @@ CREATE TABLE aluno (
 
 )
 
+CREATE TABLE curso (
+
+(
+
 CREATE TABLE matricula (
   aluno char(11),
   curso ???,
