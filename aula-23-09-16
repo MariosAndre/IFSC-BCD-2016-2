@@ -1,0 +1,63 @@
+desc aluno;
+
+insert into aluno(nome, documento, telefone, email)
+        values ('Ederson Torresini', '12345', '3381-2821', 'etorresini@ifsc.edu.br');
+
+select * from aluno;
+
+update aluno
+        set telefone = '4833812821'
+        where id = '1';
+
+select * from aluno;
+
+insert into aluno(nome, documento)
+        values ('Ederson Torresini', '123456');
+
+select * from aluno;
+
+delete from aluno
+        where nome = 'Ederson Torresini'
+        and email is null;
+
+select * from aluno;
+
+
+
+-----
+
+delete from campus;
+insert into campus(nome) values ('São José');
+
+select * from campus;
+
+insert INTO  disciplina( codigo, nome, CH, CHmin) values('LOG29001', 'Lógica', '36','0');
+
+select * from disciplina;
+
+
+insert into curriculo(implantacao, disciplina) values ('2012-03-12', 
+
+    (select id from disciplina where codigo = 'LOG29001')
+
+);
+
+
+
+insert into curso(numero, CHmin, CHmax, nome, campus, curriculo) values('290', '216','612','Engenharia de Telecomunicações',
+
+    (select id from campus where nome = 'São José'),
+
+    (select id from curriculo where implantacao = '2012-03-12')
+
+
+);
+
+insert into matricula(numero, aluno, curso) values('162000147', 
+
+    (select id from  aluno  where documento = '12345'),
+        (select id from  curso  where numero = '290')
+);
+
+select * from matricula;
+
