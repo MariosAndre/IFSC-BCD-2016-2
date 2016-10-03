@@ -24,7 +24,7 @@ graph diagramaER {
   EmailAluno [shape=plaintext,label="Email"]
 
   // Atributos Matrícula
-  IdMAtrícula [shape=plaintext,label="Id"]
+  IdMatrícula [shape=plaintext,label="Id"]
   NumeroMatrícula [shape=plaintext,label="Nº"]
 
   // Atributos Curso
