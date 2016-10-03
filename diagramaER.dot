@@ -23,7 +23,7 @@ graph diagramaER {
   TelefoneAluno [shape=plaintext,label="Telefone"]
   EmailAluno [shape=plaintext,label="Email"]
 
-  // Atributos Matricula
+  // Atributos Matrícula
   IdMAtrícula [shape=plaintext,label="Id"]
   NumeroMatrícula [shape=plaintext,label="Nº"]
 
