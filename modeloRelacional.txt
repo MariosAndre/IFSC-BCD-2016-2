@@ -1,16 +1,16 @@
-Aluno (id, documento, nome, telefone, email)
+Aluno (*id, documento, nome, telefone, email)
 
-Curso(id, número, CHmín, CHmáx, nome,câmpus)
-câmpus  referencia Câmpus(nome)
+Curso(*id, número, CHmín, CHmáx, nome,câmpus)
+câmpus  referencia Câmpus(id)
 
-Câmpus(id, nome)
+Câmpus(*id, nome)
 
-Professor(documento, nome, câmpus)
-câmpus referencia Câmpus(nome)
+Professor(*id, documento, nome, câmpus)
+câmpus referencia Câmpus(id)
 
-Matrícula(id, número, aluno, curso)
-aluno referencia Aluno(documento)
-curso referencia Curso(número)
+Matrícula(*id, número, aluno, curso)
+aluno referencia Aluno(id)
+curso referencia Curso(id)
 
 DisciplinasCursadas( matrícula, disciplina)
 matrícula referencia Matrícula(número)
