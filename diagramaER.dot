@@ -16,6 +16,7 @@ graph diagramaER {
   Pré_Requisito [shape=record]
  
   // Atributos
+  IdAluno [shape=plaintext,label="Id"]
   NomeAluno [shape=plaintext,label="Nome"]
   IdadeAluno [shape=plaintext,label="Idade"]
   DocumentoAluno [shape=plaintext,label="Documento"]
@@ -69,6 +70,7 @@ graph diagramaER {
   ProcessoDeMatrícula [shape=diamond]*/
 
   //Ligações
+  Aluno -- IdAluno
   Aluno -- NomeAluno
   Aluno -- IdadeAluno
   Aluno -- DocumentoAluno
