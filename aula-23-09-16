@@ -1,63 +1,86 @@
+
+Aula-23-09-16-(Sexta)
+
+
+netstat -lnt
+
+netstat -lnt | grep 3306
+
+cd /etc/mysql/
+
+my.cnf
+
+editar li nha 47... 127.0.0.1 para 0.0.0.0 
+salvar e sair  
+
+service mysql restart
+
+mysql
+----------------------------------
+
+create database if not exists bcd;
+
+grant all privileges on bcd.* to  'allan'@'%' identified by 'senha';
+
+flush privileges;
+
+quit
+
+--------------------------
+
+mysql workbench
+
+mysql connections
+
+no botao +
+
+conection name = BCD
+
+hostname= ip da maquina (172.18.220.116)
+port=3306
+username=allan
+
+botão test connection
+senha=senha
+
+abrir bcd
+
+nos menus acima clicar em database
+
+reverse enginer
+
+storage connection=BCD
+
+ERR Diagrama
+
+depois aba de edição
+
+ir em edit > preferences> aba sql queries
+
+desativar safe updates
+depois botao query
+reconnect to server
+
+escolher a base de dados bdc, depois ctrl enter
+
+-------------------------------
+
 desc aluno;
 
 insert into aluno(nome, documento, telefone, email)
-        values ('Ederson Torresini', '12345', '3381-2821', 'etorresini@ifsc.edu.br');
+	values ('mario', '12345','3245-7110', 'marioallan.la@gmail.com');
 
 select * from aluno;
 
 update aluno
-        set telefone = '4833812821'
-        where id = '1';
-
-select * from aluno;
-
-insert into aluno(nome, documento)
-        values ('Ederson Torresini', '123456');
-
-select * from aluno;
+	set telefone = '4832457110'
+	where id in (
+		select id
+		from aluno
+		where nome = 'mario'
+	);
 
 delete from aluno
-        where nome = 'Ederson Torresini'
-        and email is null;
+	where
 
-select * from aluno;
-
-
-
------
-
-delete from campus;
-insert into campus(nome) values ('São José');
-
-select * from campus;
-
-insert INTO  disciplina( codigo, nome, CH, CHmin) values('LOG29001', 'Lógica', '36','0');
-
-select * from disciplina;
-
-
-insert into curriculo(implantacao, disciplina) values ('2012-03-12', 
-
-    (select id from disciplina where codigo = 'LOG29001')
-
-);
-
-
-
-insert into curso(numero, CHmin, CHmax, nome, campus, curriculo) values('290', '216','612','Engenharia de Telecomunicações',
-
-    (select id from campus where nome = 'São José'),
-
-    (select id from curriculo where implantacao = '2012-03-12')
-
-
-);
-
-insert into matricula(numero, aluno, curso) values('162000147', 
-
-    (select id from  aluno  where documento = '12345'),
-        (select id from  curso  where numero = '290')
-);
-
-select * from matricula;
-
+--------------------------
