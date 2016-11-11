@@ -1,134 +1,186 @@
 graph diagramaER {
-  layout = neato
-  layout = neato
+  //layout = neato
  
   // Entidades
   Aluno [shape=record]
   Curso  [shape=record]
-  Disciplina [shape=record]
-  Horário [shape=record]
+  Câmpus [shape=record]
   Professor [shape=record]
   Matrícula [shape=record]
-  Câmpus [shape=record]
+  DisciplinasCursadas [shape=record]
+  Horário [shape=record]
+  PedidoDeMatricula [shape=record]
+  DisciplinasMinistradas [shape=record]
   Currículo [shape=record]
-  Semestre [shape=record]
-  Pedido_de_matricula [shape=record]
+  Disciplina [shape=record]
   Pré_Requisito [shape=record]
  
   // Atributos Aluno
-  IdAluno [shape=plaintext,label="Id"]
   NomeAluno [shape=plaintext,label="Nome"]
-  IdadeAluno [shape=plaintext,label="Idade"]
   DocumentoAluno [shape=plaintext,label="Documento"]
   TelefoneAluno [shape=plaintext,label="Telefone"]
   EmailAluno [shape=plaintext,label="Email"]
 
-  // Atributos Matrícula
-  IdMatrícula [shape=plaintext,label="Id"]
-  NumeroMatrícula [shape=plaintext,label="Nº"]
-
   // Atributos Curso
-  IdCurso [shape=plaintext,label="Id"]
+  NumeroCurso [shape=plaintext,label="Numero"]
+  CHminCurso [shape=plaintext,label="CHmin"]
+  CHmaxCurso [shape=plaintext,label="CHmax"]
   NomeCurso [shape=plaintext,label="Nome"]
-  NumeroCurso [shape=plaintext,label="Nº"]
+  CampusCurso [shape=plaintext,label="Câmpus"]  
 
-  
-  /*Aula [shape=plaintext]
-  CH [shape=plaintext]
-  CHmínima [shape=plaintext]
-  CódigoCurso [shape=plaintext,label="Código"]
-  CódigoDisciplina [shape=plaintext,label="Código"]
-  CPF [shape=plaintext]
-  Dia [shape=plaintext]
-  Fase [shape=plaintext]
-  Matrícula [shape=plaintext]
-  NomeAluno [shape=plaintext,label="Nome"]
-  NomeCurso [shape=plaintext,label="Nome"]
-  NomeProfessor [shape=plaintext,label="Nome"]
-  SemanaAB [shape=plaintext,label="Semana AB"]
-  Semestre [shape=plaintext]
-  SIAPE [shape=plaintext]
-  Turno [shape=plaintext]*/
+  // Atributos Câmpus
+  NomeCampus [shape=plaintext,label="Nome"]  
 
-    // Verbos
-    tem [shape=diamond]
-    cursou [shape=diamond]
-    faz [shape=diamond]
-    vinculado [shape=diamond]
-    pertence [shape=diamond]
-    possui [shape=diamond]
-    lotado [shape=diamond]
-    agrega [shape=diamond]
-    ministrado [shape=diamond]
-    oferta [shape=diamond]
-    contém [shape=diamond]
-    exige [shape=diamond]
-    disponibiliza [shape=diamond]
+  // Atributos Professor
+  DocumentoProfessor [shape=plaintext,label="Documento"]
+  NomeProfessor [shape=plaintext,label="Nome"] 
+  CampusProfessor [shape=plaintext,label="Câmpus"]    
+
+  // Atributos Matrícula
+  NumeroMatrícula [shape=plaintext,label="Numero"]
+  AlunoMatrícula [shape=plaintext,label="Aluno"]
+  CursoMatrícula [shape=plaintext,label="Curso"]
+
+  // Atributos DisciplinasCursadas
+  MatriculaDisciplinasCursadas [shape=plaintext,label="Matricula"]
+  DisciplinaDisciplinasCursadas [shape=plaintext,label="Disciplina"]
+
+  // Atributos Horário
+  horaInicioHorário [shape=plaintext,label="horaInício"]
+  horaTerminoHorário [shape=plaintext,label="horaTérmino"]
+  diaDaSemanaHorário [shape=plaintext,label="Dia da semana"]
+  SemanaABHorário [shape=plaintext,label="Semana AB"]
+  DisciplinaHorário [shape=plaintext,label="Disciplina"]
+  SemestreHorário [shape=plaintext,label="Semestre"]
+  AnoHorário [shape=plaintext,label="Ano"]
+
+  // Atributos PedidoDeMatricula
+  SessaoPedidoDeMatricula [shape=plaintext,label="Sessão"]
+  TipoPedidoDeMatricula [shape=plaintext,label="Tipo"]
+  MatriculaPedidoDeMatricula [shape=plaintext,label="Matrícula"]
+  DisciplinaPedidoDeMatricula [shape=plaintext,label="Disciplina"]
+
+  // Atributos DisciplinasMinistradas
+  ProfessorDisciplinasMinistradas [shape=plaintext,label="Professor"]
+  DisciplinaDisciplinasMinistradas [shape=plaintext,label="Disciplina"]
  
-  //Relacionamentos
-  /*Calendário [shape=diamond]
-  Estuda [shape=diamond]
-  Grade [shape=diamond]
-  Leciona [shape=diamond]
-  PréRequisito [shape=diamond]
-  ProcessoDeMatrícula [shape=diamond]*/
+  // Atributos Currículo
+  CursoCurrículo [shape=plaintext,label="Curso"]
+  ImplantacaoCurrículo [shape=plaintext,label="Implantação"]
+  DisciplinaCurrículo [shape=plaintext,label="Disciplina"]
 
-  //Ligações
-  Aluno -- IdAluno
+  // Atributos Disciplina
+  CodigoDisciplina [shape=plaintext,label="Código"]
+  NomeDisciplina [shape=plaintext,label="Nome"]
+  CHDisciplina [shape=plaintext,label="CH"]
+  CHminDisciplina [shape=plaintext,label="CHmin"]
+
+  // Atributos Pré_Requisito
+  ObrigatorioPré_Requisito [shape=plaintext,label="Obrigatório"]
+  EixoPré_Requisito [shape=plaintext,label="Eixo"]
+  DisciplinaPré_Requisito [shape=plaintext,label="Disciplina"]
+  preRequisitoPré_Requisito [shape=plaintext,label="Pré-requisito"]
+
+
+  // Verbos
+  tem [shape=diamond]
+  cursou [shape=diamond]
+  faz [shape=diamond]
+  vinculado [shape=diamond]
+  pertence [shape=diamond]
+  possui [shape=diamond]
+  lotado [shape=diamond]
+  agrega [shape=diamond]
+  ministrado [shape=diamond]
+  requer [shape=diamond]
+  contém [shape=diamond]
+  exige [shape=diamond]
+  precisa [shape=diamond]
+  detém [shape=diamond]
+  integra [shape=diamond]
+
+  //Ligações atributos Aluno a entidade Aluno
   Aluno -- NomeAluno
-  Aluno -- IdadeAluno
   Aluno -- DocumentoAluno
   Aluno -- TelefoneAluno
   Aluno -- EmailAluno
 
-  Matrícula -- IdMatrícula
-  Matrícula -- NumeroMatrícula
-
-  Curso -- IdCurso
-  Curso -- NomeCurso
+  //Ligações atributos Curso a entidade Curso
   Curso -- NumeroCurso
-  
-  /*Aluno -- CPF
-  Aluno -- Estuda [label="0..N"]
-  
-  Aluno -- ProcessoDeMatrícula [label="0..N"]
-  Curso -- CódigoCurso
-  Curso -- Estuda [label="0..N"]
-  Curso -- Grade [label="1"]
+  Curso -- CHminCurso
+  Curso -- CHmaxCurso
   Curso -- NomeCurso
-  Disciplina -- Calendário [label="1"]
-  Disciplina -- CH
-  Disciplina -- CHmínima
-  Disciplina -- CódigoDisciplina
-  Disciplina -- Fase
-  Disciplina -- Grade [label="0..N"]
-  Disciplina -- Leciona [label="0..N"]
-  Disciplina -- PréRequisito [label="0..N"]
-  Disciplina -- PréRequisito [label="1"]
-  Disciplina -- ProcessoDeMatrícula [label="0..N"]
-  Estuda -- Matrícula
-  Horário -- Aula
-  Horário -- Calendário [label="0..N"]
-  Horário -- Dia
-  Horário -- SemanaAB
-  Horário -- Semestre
-  Horário -- Turno
-  Professor -- Leciona [label="0..1"]
+  Curso -- CampusCurso
+
+  //Ligações atributos Campus a entidade Campus
+  Câmpus -- NomeCampus
+
+  //Ligações atributos Professor a entidade Professor
+  Professor -- DocumentoProfessor
   Professor -- NomeProfessor
-  Professor -- SIAPE*/
-    
-    // Ligações
-    Aluno -- tem -- Matrícula
-    Matrícula -- cursou -- Disciplina
-    Matrícula -- faz -- Pedido_de_matricula
-    Matrícula -- vinculado -- Curso
-    Curso -- pertence -- Câmpus
-    Curso -- possui -- Currículo
-    Professor -- lotado -- Câmpus
-    Disciplina -- ministrado -- Professor
-    Currículo -- agrega -- Disciplina
-    Semestre -- oferta -- Disciplina
-    Semestre -- disponibiliza -- Horário
-    Disciplina -- contém -- Horário
-    Disciplina -- exige -- Pré_Requisito
+  Professor -- CampusProfessor
+ 
+  //Ligações atributos Matricula a entidade Matricula
+  Matrícula -- NumeroMatrícula
+  Matrícula -- AlunoMatrícula
+  Matrícula -- CursoMatrícula
+  
+  //Ligações atributos DisciplinasCursadas a entidade DisciplinasCursadas
+  DisciplinasCursadas -- MatriculaDisciplinasCursadas
+  DisciplinasCursadas -- DisciplinaDisciplinasCursadas
+
+  //Ligações atributos Horário a entidade Horário
+  Horário -- horaInicioHorário
+  Horário -- horaTerminoHorário
+  Horário -- diaDaSemanaHorário
+  Horário -- SemanaABHorário
+  Horário -- DisciplinaHorário
+  Horário -- SemestreHorário
+  Horário -- AnoHorário
+
+  //Ligações atributos PedidoDeMatricula a entidade PedidoDeMatricula
+  PedidoDeMatricula -- SessaoPedidoDeMatricula
+  PedidoDeMatricula -- TipoPedidoDeMatricula
+  PedidoDeMatricula -- MatriculaPedidoDeMatricula
+  PedidoDeMatricula -- DisciplinaPedidoDeMatricula
+
+  //Ligações atributos DisciplinasMinistradas a entidade DisciplinasMinistradas
+  DisciplinasMinistradas -- ProfessorDisciplinasMinistradas
+  DisciplinasMinistradas -- DisciplinaDisciplinasMinistradas
+
+  //Ligações atributos Currículo a entidade Currículo
+  Currículo -- CursoCurrículo
+  Currículo -- ImplantacaoCurrículo
+  Currículo -- DisciplinaCurrículo
+
+  //Ligações atributos Disciplina a entidade Disciplina
+  Disciplina -- CodigoDisciplina
+  Disciplina -- NomeDisciplina
+  Disciplina -- CHDisciplina
+  Disciplina -- CHminDisciplina
+
+  //Ligações atributos Pré_Requisito a entidade Pré_Requisito
+  Pré_Requisito -- ObrigatorioPré_Requisito
+  Pré_Requisito -- EixoPré_Requisito
+  Pré_Requisito -- DisciplinaPré_Requisito
+  Pré_Requisito -- preRequisitoPré_Requisito
+  
+  
+  // Ligações entre Entidades
+  Aluno -- tem -- Matrícula
+  Matrícula -- cursou -- Disciplina
+  Matrícula -- faz -- PedidoDeMatricula
+  Matrícula -- vinculado -- Curso
+  Curso -- pertence -- Câmpus
+  Curso -- possui -- Currículo
+  Professor -- lotado -- Câmpus
+  Disciplina -- ministrado -- Professor
+  Currículo -- agrega -- Disciplina
+  DisciplinasCursadas -- requer -- Matrícula
+  DisciplinasCursadas -- precisa -- Disciplina
+  Disciplina -- contém -- Horário
+  Disciplina -- exige -- Pré_Requisito
+  DisciplinasMinistradas -- detém -- Disciplina
+  DisciplinasMinistradas -- integra -- Professor
+
 }
