@@ -8,5 +8,4 @@ Instalação nodejs-express Versão Gustavo
 6- npm install crypto ldapjs mysql body-parser
 7- touch app.js
 8- mkdir route
-9- cd route
-10- touch index.js
+9- touch route/index.js
