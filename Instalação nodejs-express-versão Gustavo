@@ -6,3 +6,7 @@ Instalação nodejs-express Versão Gustavo
 4- mkdir gustavo/bcd20162/webserver/
 5- cd gustavo/bcd20162/webserver/
 6- npm install crypto ldapjs mysql body-parser
+7- touch app.js
+8- mkdir route
+9- cd route
+10- touch index.js
